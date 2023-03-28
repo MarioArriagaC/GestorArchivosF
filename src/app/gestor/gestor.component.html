@@ -7,9 +7,9 @@
   <!-- Formulario -->
   <div class="validation">
     <label class="lbl" for="user">Usuario:</label>
-    <input class="ipt" type="text" name="" id="user" />
+    <input class="ipt" type="text" name="" id="user" maxlength="18" />
     <label class="lbl" for="password">Contraseña:</label>
-    <input class="ipt" type="password" name="" id="password" />
+    <input class="ipt" type="password" name="" id="password" maxlength="18"/>
   </div>
   <div class="btnPosition">
     <button type="button" class="btn">Aceptar</button>
@@ -17,11 +17,30 @@
 
   <!-- Contenido -->
   <div class="card">
-    <ul>
-      <li class="list">OlaPrro</li>
-      <li class="list">OlaPrro</li>
-      <li class="list">OlaPrro</li>
-      <li class="list">OlaPrro</li>
-    </ul>
+    <table>
+      <!-- Titulos -->
+      <tr>
+        <th>Usuario</th>
+        <th>Archivos</th>
+        <th>Descargar</th>
+      </tr>
+      <!-- Primer columna -->
+      <tr>
+        <td>Mario Arriaga</td>
+
+        <td>
+          <select name="files" id="files">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="opel">Opel</option>
+            <option value="audi">Audi</option>
+          </select> 
+        </td>
+        
+        <td>
+          <button class="btnDownload" type="button">Descargar</button>
+        </td>
+      </tr>
+    </table>
   </div>
 </div>

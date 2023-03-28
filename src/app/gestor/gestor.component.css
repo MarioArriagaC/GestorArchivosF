@@ -1,3 +1,7 @@
+* {
+  font-style: italic;
+}
+
 .header {
   width: 100%;
   color: white;
@@ -6,7 +10,6 @@
 .title {
   text-align: center;
   font-size: 70px;
-  font-style: italic;
 }
 
 .validation {
@@ -16,14 +19,12 @@
 
 .lbl {
   margin: 0 5px;
-  font-style: italic;
 }
 
 .ipt {
   border-radius: 15px;
   text-align: center;
   width: 150px;
-  font-style: italic;
   border: none;
 }
 
@@ -39,7 +40,6 @@
   border: none;
   background-color: #ffffffe6;
   width: 80px;
-  font-style: italic;
 }
 
 .btn:hover {
@@ -50,10 +50,28 @@
 .card {
   background-color: rgba(255, 255, 255, 0.612);
   font-size: 25px;
-  font-style: italic;
   border-radius: 18px;
 }
 
-.list {
-  padding: 10px 0;
+table {
+  width: 100%;
+}
+
+td, th {
+  text-align: left;
+  padding: 8px;
+}
+
+select {
+  width: 80%;
+  border-radius: 18px;
+  border: none;
+}
+
+.btnDownload {
+  width: 60%;
+  border-radius: 18px;
+  border: none;
+  cursor: pointer;
+  background-color: greenyellow;
 }
