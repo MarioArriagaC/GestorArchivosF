@@ -10,6 +10,7 @@
     <input class="ipt" type="text" name="" id="user" maxlength="18" />
     <label class="lbl" for="password">Contraseña:</label>
     <input class="ipt" type="password" name="" id="password" maxlength="18"/>
+    <input type="file" class="file-upload" onchange="console.log(event.target.files)">
   </div>
   <div class="btnPosition">
     <button type="button" class="btn">Aceptar</button>
@@ -42,5 +43,8 @@
         </td>
       </tr>
     </table>
+    <div *ngIf="files">
+      {{ files.name }}
+    </div>
   </div>
 </div>
