@@ -40,7 +40,11 @@ export class GestorComponent {
       ruta_archivo: "./assets/files/",
       status: true
     }).subscribe(data => {
-      
+      this.ArchivoService.getFiles().subscribe(data => {
+        this.files = data;
+        console.log(data);
+        
+      });
     });
   }
 
