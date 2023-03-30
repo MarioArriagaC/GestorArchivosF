@@ -9,42 +9,38 @@
     <label class="lbl" for="user">Usuario:</label>
     <input class="ipt" type="text" name="" id="user" maxlength="18" />
     <label class="lbl" for="password">Contraseña:</label>
-    <input class="ipt" type="password" name="" id="password" maxlength="18"/>
-    <input type="file" class="file-upload" onchange="console.log(event.target.files)">
+    <input class="ipt" type="password" name="" id="password" maxlength="18" />
   </div>
   <div class="btnPosition">
     <button type="button" class="btn">Aceptar</button>
   </div>
 
-  <!-- Contenido -->
+  <!-- Card con datos  -->
   <div class="card">
     <table>
       <!-- Titulos -->
-      <tr>
-        <th>Usuario</th>
-        <th>Archivos</th>
-        <th>Descargar</th>
+      <tr style="justify-content: center;">
+        <th class="positionTitles">Usuario</th>
+        <th class="positionTitles">Archivos</th>
       </tr>
-      <!-- Primer columna -->
-      <tr>
-        <td>Mario Arriaga</td>
+      <!-- Usuario -->
+      <tr *ngFor="let data of files">
+        <td> {{ data.name }} </td>
 
+        <!-- Archivos -->
         <td>
-          <select name="files" id="files">
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="opel">Opel</option>
-            <option value="audi">Audi</option>
-          </select> 
-        </td>
-        
-        <td>
-          <button class="btnDownload" type="button">Descargar</button>
+          <p>
+            {{ data.name }}
+            <button type="button" class="btnDownload">
+              <img
+                src="../../assets/images/download.png"
+                alt="image download"
+                class="imageBtn"
+              />
+            </button>
+          </p>
         </td>
       </tr>
     </table>
-    <div *ngIf="files">
-      {{ files.name }}
-    </div>
   </div>
 </div>

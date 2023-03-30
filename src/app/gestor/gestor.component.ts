@@ -7,11 +7,14 @@ import { ArchivosService } from '../archivos.service';
 })
 export class GestorComponent {
   files: any;
+  
   constructor(private ArchivoService: ArchivosService){}
 
   ngOnInit(){
     this.ArchivoService.getFiles().subscribe(data => {
       this.files = data;
+      console.log(data);
+      
     });
 
     this.ArchivoService.uploadFile({
@@ -19,7 +22,7 @@ export class GestorComponent {
       ruta_archivo: "./assets/files/",
       status: true
     }).subscribe(data => {
-      console.log("hola"+data);
+      console.log(data);
     });
 
     this.ArchivoService.editFile({

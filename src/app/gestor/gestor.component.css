@@ -51,6 +51,8 @@
   background-color: rgba(255, 255, 255, 0.612);
   font-size: 25px;
   border-radius: 18px;
+  width: 80%;
+  margin: auto;
 }
 
 table {
@@ -58,8 +60,12 @@ table {
 }
 
 td, th {
-  text-align: left;
-  padding: 8px;
+  text-align: center;
+  padding: 20px;
+}
+
+.positionTitles {
+  width: 50%;
 }
 
 select {
@@ -69,9 +75,18 @@ select {
 }
 
 .btnDownload {
-  width: 60%;
-  border-radius: 18px;
   border: none;
   cursor: pointer;
-  background-color: greenyellow;
+  background-color: transparent;
+  width: 12%;
+}
+
+.btnDownload:hover {
+  background-color: #63c5fee6;
+  box-shadow: 0 0 10px 8px #63c5fee6;
+  border-radius: 18px;
+}
+
+.imageBtn {
+  width: 60%;
 }
