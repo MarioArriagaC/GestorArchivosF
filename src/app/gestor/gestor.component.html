@@ -9,9 +9,12 @@
     <label class="lbl" for="user">Usuario:</label>
     <input class="ipt" type="text" name="" id="user" maxlength="18" />
     <label class="lbl" for="password">Contraseña:</label>
-    <input class="ipt" type="password" name="" id="password" maxlength="18"/>
-    <input type="file" class="file-upload" #file (change)="upload($event)">
-  </div>
+    <input class="ipt" type="password" name="" id="password" maxlength="18" />
+
+    <!-- Archivo seleccionado -->
+    <input type="file" class="custom-file-input" #file (change)="upload($event)" style="border-radius: 90px;" />
+
+  </div>  
   <div class="btnPosition">
     <button type="button" class="btn">Aceptar</button>
   </div>
@@ -20,13 +23,13 @@
   <div class="card">
     <table>
       <!-- Titulos -->
-      <tr style="justify-content: center;">
+      <tr style="justify-content: center">
         <th class="positionTitles">Usuario</th>
         <th class="positionTitles">Archivos</th>
       </tr>
       <!-- Usuario -->
       <tr *ngFor="let data of files">
-        <td> {{ data.id }} </td>
+        <td>{{ data.id }}</td>
 
         <!-- Archivos -->
         <td>
