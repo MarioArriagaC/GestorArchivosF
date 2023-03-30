@@ -10,6 +10,7 @@
 .title {
   text-align: center;
   font-size: 70px;
+  margin: 50px 0;
 }
 
 .validation {
@@ -122,10 +123,12 @@ select {
 
 @media screen and (max-width: 768px) {
   .card {
-    width: 100%;
+    width: 96%;
     margin: 0 10px;
     font-size: 12px;
   }
 
-
+  .btnDownload {
+    width: 20%;
+  }
 }
