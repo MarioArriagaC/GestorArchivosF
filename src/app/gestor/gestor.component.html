@@ -9,7 +9,8 @@
     <label class="lbl" for="user">Usuario:</label>
     <input class="ipt" type="text" name="" id="user" maxlength="18" />
     <label class="lbl" for="password">Contraseña:</label>
-    <input class="ipt" type="password" name="" id="password" maxlength="18" />
+    <input class="ipt" type="password" name="" id="password" maxlength="18"/>
+    <input type="file" class="file-upload" #file (change)="upload($event)">
   </div>
   <div class="btnPosition">
     <button type="button" class="btn">Aceptar</button>
