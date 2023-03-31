@@ -4,11 +4,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GestorComponent } from './gestor/gestor.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GestorComponent
+    GestorComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
