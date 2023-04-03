@@ -75,6 +75,7 @@
   font-weight: 500;
   margin: 10px 0 0 67px;
 }
+
 /* Fin input file */
 
 .card {
@@ -89,9 +90,18 @@ table {
   width: 100%;
 }
 
-td, th {
+td,
+th {
   text-align: center;
   padding: 20px;
+}
+
+.box {
+  border-top: 3px solid rgba(255, 255, 255, 0.500);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.500);
+  border-radius: 18px;
+  border-right: 5px dotted rgba(255, 255, 255, 0.500);
+  border-left: 5px dotted rgba(255, 255, 255, 0.500);
 }
 
 .positionTitles {
@@ -108,6 +118,36 @@ select {
   text-decoration: underline;
   color: blue;
 }
+
+.filesScroll {
+  height: 300px;
+  overflow-y: auto;
+}
+
+/* Scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.600);
+  border-radius: 18px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #0187E8;
+  border-radius: 18px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #037bd1;
+}
+
+/* Fin Scrollbar */
 
 .btnDownload {
   border: none;
@@ -138,7 +178,8 @@ select {
     padding: 0 0;
   }
 
-  td, th {
+  td,
+  th {
     font-size: 15px;
   }
 }

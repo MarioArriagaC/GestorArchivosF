@@ -24,20 +24,22 @@
       </tr>
       <!-- Usuario -->
       <tr *ngFor="let data of files">
-        <td>{{ data.id }}</td>
+        <td class="box">{{ data.id }}</td>
 
         <!-- Archivos -->
-        <td>
-          <p class="link">
-            {{ data.name }}
-            <button type="button" class="btnDownload">
-              <img
-                src="../../assets/images/download.png"
-                alt="image download"
-                class="imageBtn"
-              />
-            </button>
-          </p>
+        <td class="box">
+          <div class="filesScroll">
+            <p class="link">
+              {{ data.name }}
+              <button type="button" class="btnDownload">
+                <img
+                  src="../../assets/images/download.png"
+                  alt="image download"
+                  class="imageBtn"
+                />
+              </button>
+            </p>
+          </div>
         </td>
       </tr>
     </table>
