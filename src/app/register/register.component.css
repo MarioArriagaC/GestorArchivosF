@@ -1,0 +1,60 @@
+.card {
+  display: block;
+  text-align: center;
+  margin: 13% auto;
+  width: 50%;
+  height: 50%;
+  border-radius: 18px;
+  background-color: rgba(255, 255, 255, 0.400);
+  padding: 5px 0;
+}
+
+.title {
+  margin-bottom: 2px;
+  font-size: 30px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+}
+
+label {
+  margin: 5px 0 2px 0;
+}
+
+.ipt {
+  border-radius: 18px;
+  border: none;
+  text-align: center;
+  width: 80%;
+}
+
+.btn {
+  border-radius: 18px;
+  border: none;
+  text-align: center;
+  width: auto;
+  cursor: pointer;
+  margin: 20px 0;
+}
+
+.btn:hover {
+  box-shadow: 0 0 10px 3px rgb(222, 222, 222);
+}
+
+@media screen and (max-width: 760px) {
+  .card {
+    width: auto;
+    margin: 50% 0;
+  }
+}
