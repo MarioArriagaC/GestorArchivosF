@@ -6,15 +6,10 @@
 
   <!-- Formulario -->
   <div class="validation">
-    <label class="lbl" for="user">Usuario:</label>
-    <input class="ipt" type="text" name="" id="user" maxlength="18" />
-    <label class="lbl" for="password">Contraseña:</label>
-    <input class="ipt" type="password" name="" id="password" maxlength="18" />
-
     <!-- Archivo seleccionado -->
     <input type="file" class="custom-file-input" #file (change)="upload($event)" style="border-radius: 90px;" />
-
   </div>  
+  
   <div class="btnPosition">
     <button type="button" class="btn">Aceptar</button>
   </div>
