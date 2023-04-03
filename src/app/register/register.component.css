@@ -39,17 +39,32 @@ label {
   width: 80%;
 }
 
-.btn {
+.btnOk {
   border-radius: 18px;
   border: none;
   text-align: center;
-  width: auto;
+  width: 20%;
   cursor: pointer;
-  margin: 20px 0;
+  margin: 20px 5px;
+  background: cyan;
 }
 
-.btn:hover {
-  box-shadow: 0 0 10px 3px rgb(222, 222, 222);
+.btnCancel {
+  border-radius: 18px;
+  border: none;
+  text-align: center;
+  width: 20%;
+  cursor: pointer;
+  margin: 20px 5px;
+  background: red;
+}
+
+.btnOk:hover {
+  box-shadow: 0 0 10px 3px rgb(34, 233, 255);
+}
+
+.btnCancel:hover {
+  box-shadow: 0 0 10px 3px rgb(255, 34, 34);
 }
 
 @media screen and (max-width: 760px) {
