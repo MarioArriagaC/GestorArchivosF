@@ -7,8 +7,9 @@ import { formatDate } from '@angular/common';
   styleUrls: ['./gestor.component.css']
 })
 export class GestorComponent {
-  files: any;
   
+  files: any;
+  selectedFile: any;
   constructor(private ArchivoService: ArchivosService){}
 
   ngOnInit(){
@@ -47,5 +48,26 @@ export class GestorComponent {
       });
     });
   }
+  onFileSelected(event: any){
+    this.selectedFile = <File>event.target.files[0];
+    console.log(this.selectedFile)
+  }
+
+  onUpload(){
+    const fd = new FormData();
+    fd.append('image',this.selectedFile, this.selectedFile.name);
+    console.log(fd)
+    this.ArchivoService.uploadFile({
+      fd
+    }).subscribe(data => {
+      this.ArchivoService.getFiles().subscribe(data => {
+        this.files = data;
+        console.log(data);
+        
+      });
+    });
+  }
+
+  
 
 }

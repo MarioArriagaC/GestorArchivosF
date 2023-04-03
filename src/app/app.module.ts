@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { GestorComponent } from './gestor/gestor.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,8 +18,14 @@ import { RegisterComponent } from './register/register.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
+    RouterModule.forRoot([
+      {path: 'gestor', component: GestorComponent},
+      {path: 'register', component: RegisterComponent},
+      {path: 'login', component: LoginComponent},
+      {path: '', redirectTo: '/login', pathMatch: 'full'},
+    ]),
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
