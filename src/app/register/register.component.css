@@ -48,6 +48,16 @@ label {
   cursor: not-allowed;
 }
 
+.passwordTxtOk {
+  color: greenyellow;
+  font-size: 12px;
+}
+
+.passwordTxtNotOk {
+  color: red;
+  font-size: 12px;
+}
+
 .btnOk {
   border-radius: 18px;
   border: none;
@@ -56,6 +66,17 @@ label {
   cursor: pointer;
   margin: 20px 5px;
   background: cyan;
+}
+
+.btnNotOk {
+  border-radius: 18px;
+  border: none;
+  text-align: center;
+  width: 30%;
+  cursor: not-allowed;
+  margin: 20px 5px;
+  background: gray;
+  color: white;
 }
 
 .btnCancel {

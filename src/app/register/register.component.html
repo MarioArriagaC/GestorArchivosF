@@ -3,35 +3,92 @@
   <h1 class="title">Creación de Usuarios</h1>
 
   <!-- Formulario -->
-  <form  (submit)="onSubmit()">
-
+  <form (submit)="onSubmit()">
     <div class="row">
       <!-- Primer columna -->
       <div class="column">
         <div class="form">
           <label for="name">Nombre:</label>
-          <input id="name" name="name" [(ngModel)]="name" class="ipt" type="text" maxlength="15" placeholder="Nombre">
+          <input
+            id="name"
+            name="name"
+            [(ngModel)]="name"
+            class="ipt"
+            type="text"
+            maxlength="15"
+            placeholder="Nombre"
+          />
           <label for="lastName">Apellido:</label>
-          <input id="lastName" name="lastName" [(ngModel)]="lastName" (change)="userName()" class="ipt" type="text" maxlength="15" placeholder="Apellido">
+          <input
+            id="lastName"
+            name="lastName"
+            [(ngModel)]="lastName"
+            (change)="userName()"
+            class="ipt"
+            type="text"
+            maxlength="15"
+            placeholder="Apellido"
+          />
           <label for="dateBirth">Fecha de nacimiento:</label>
-          <input id="dateBirth" [(ngModel)]="dateBirth" type="date" name="dateBirth" class="ipt">
+          <input
+            id="dateBirth"
+            [(ngModel)]="dateBirth"
+            type="date"
+            name="dateBirth"
+            class="ipt"
+          />
         </div>
       </div>
-      
+
       <!-- Segunda columna -->
       <div class="column">
         <div class="form">
-          <label for="user">Usuario:</label> 
-          <input id="user" disabled [(ngModel)]="user" name="user" class="iptUsr" type="text" maxlength="15" placeholder="Usuario">
+          <label for="user">Usuario:</label>
+          <input
+            id="user"
+            disabled
+            [(ngModel)]="user"
+            name="user"
+            class="iptUsr"
+            type="text"
+            maxlength="15"
+            placeholder="Usuario"
+          />
           <label for="password">Contraseña:</label>
-          <input id="password" [(ngModel)]="password" name="password" class="ipt" type="password" maxlength="15" placeholder="Contraseña">
+          <input
+            id="password"
+            [(ngModel)]="password"
+            name="password"
+            class="ipt"
+            type="password"
+            maxlength="15"
+            minlength="5"
+            placeholder="Contraseña"
+          />
+          <div *ngIf="password.length < 3; else passwordOk">
+            <p class="passwordTxtNotOk">La contraseña debe ser mayor a 3 carácteres 🚫</p>
+          </div>
+          <ng-template #passwordOk>
+            <p class="passwordTxtOk">La contraseña es correcta ✅</p>
+          </ng-template>
         </div>
       </div>
     </div>
-    <!-- Botón -->
-    <button class="btnOk" type="submit">Crear usuario</button>
-    <button class="btnCancel" type="button" routerLink="/login">Cancelar</button>
-  </form>
 
+    <!-- Botón -->
+    <div *ngIf="name === '' || lastName === '' || password.length < 3 || dateBirth === ''; else success">
+      <button class="btnNotOk" disabled type="submit">Crear usuario</button>
+      <button class="btnCancel" type="button" routerLink="/login">
+        Cancelar
+      </button>
+    </div>
     
+    <ng-template #success>
+      <button class="btnOk" type="submit">Crear usuario</button>
+      <button class="btnCancel" type="button" routerLink="/login">
+        Cancelar
+      </button>
+    </ng-template>
+
+  </form>
 </div>

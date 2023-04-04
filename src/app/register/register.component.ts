@@ -17,19 +17,19 @@ export class RegisterComponent {
   constructor(private RegisterService: RegistrerService, private router: Router) { }
 
   userName() {
-    this.user = this.name.substring(0,3).toLocaleLowerCase() + this.lastName.substring(0,3).toLocaleLowerCase();
+    this.user = this.name.substring(0, 3).toLocaleLowerCase() + this.lastName.substring(0, 3).toLocaleLowerCase();
   }
 
   onSubmit() {
     console.log(this.registrado)
     this.RegisterService.loginUser().subscribe(data => {
-      for(let numero in data){
-        if(this.user == data[numero].user){
+      for (let numero in data) {
+        if (this.user == data[numero].user) {
           alert('Usuario ya registrado')
           this.registrado = true
         }
       }
-      if(this.registrado == false){
+      if (this.registrado == false) {
         this.RegisterService.registerUser({
           Name: this.name,
           Second_Name: this.lastName,
@@ -41,10 +41,7 @@ export class RegisterComponent {
           this.router.navigate(['/login']);
         });
       }
-
     });
-    
-   
   }
 
 
