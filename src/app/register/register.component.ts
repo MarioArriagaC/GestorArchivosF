@@ -13,10 +13,14 @@ export class RegisterComponent {
   dateBirth = '';
   user = '';
   password = '';
-  
-  constructor(private RegisterService: RegistrerService, private router:Router){}
-  onSubmit(){
-    
+
+  constructor(private RegisterService: RegistrerService, private router: Router) { }
+
+  userName() {
+    this.user = this.name.substring(0,3).toLocaleLowerCase() + this.lastName.substring(0,3).toLocaleLowerCase();
+  }
+
+  onSubmit() {
     this.RegisterService.registerUser({
       Name: this.name,
       Second_Name: this.lastName,

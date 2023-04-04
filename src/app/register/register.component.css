@@ -39,6 +39,15 @@ label {
   width: 85%;
 }
 
+.iptUsr {
+  border-radius: 18px;
+  border: none;
+  text-align: center;
+  width: 85%;
+  background: white;
+  cursor: not-allowed;
+}
+
 .btnOk {
   border-radius: 18px;
   border: none;
