@@ -8,13 +8,15 @@
   </div>
 
   <!-- Formulario -->
+<form (submit)="loginUsuario()">
   <div class="form">
     <label for="user">Usuario:</label>
-    <input id="user" class="ipt" type="text" maxlength="15" placeholder="Usuario">
+    <input id="user" name="user" [(ngModel)]="name" class="ipt" type="text" maxlength="15" placeholder="Usuario">
     <label for="password">Contraseña:</label>
-    <input id="password" class="ipt" type="password" maxlength="15" style="margin-bottom: 10px;" placeholder="Contraseña">
+    <input id="password" name="password" [(ngModel)]="password" class="ipt" type="password" maxlength="15" style="margin-bottom: 10px;" placeholder="Contraseña">
   </div>
 
   <!-- Botón -->
-  <button class="btn" type="button">Aceptar</button>
+  <button class="btn" type="submit">Aceptar</button>
+</form>
 </div>

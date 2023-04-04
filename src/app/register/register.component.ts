@@ -13,7 +13,7 @@ export class RegisterComponent {
   dateBirth = '';
   user = '';
   password = '';
-
+  registrado = false;
   constructor(private RegisterService: RegistrerService, private router: Router) { }
 
   userName() {
@@ -21,15 +21,31 @@ export class RegisterComponent {
   }
 
   onSubmit() {
-    this.RegisterService.registerUser({
-      Name: this.name,
-      Second_Name: this.lastName,
-      date_birth: this.dateBirth,
-      User: this.user,
-      Password: CryptoJS.SHA256(this.password).toString()
-    }).subscribe(data => {
-      this.router.navigate(['/login']);
+    console.log(this.registrado)
+    this.RegisterService.loginUser().subscribe(data => {
+      for(let numero in data){
+        if(this.user == data[numero].user){
+          alert('Usuario ya registrado')
+          this.registrado = true
+        }
+      }
+      if(this.registrado == false){
+        this.RegisterService.registerUser({
+          Name: this.name,
+          Second_Name: this.lastName,
+          date_birth: this.dateBirth,
+          User: this.user,
+          Password: CryptoJS.SHA256(this.password).toString()
+        }).subscribe(data => {
+          alert('usuario creado con exito');
+          this.router.navigate(['/login']);
+        });
+      }
+
     });
+    
+   
   }
+
 
 }
