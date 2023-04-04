@@ -2,6 +2,26 @@
   font-style: italic;
 }
 
+.logout {
+  display: flex;
+  justify-content: right;
+  margin: 5px 20px;
+}
+
+.btnClose {
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  background-color: #ffffffe6;
+  width: 80px;
+  background: rgb(238, 56, 56);
+  font-weight: 600;
+}
+
+.btnClose:hover {
+  box-shadow: 0 0 10px 3px rgb(223, 53, 53);;
+}
+
 .header {
   width: 100%;
   color: white;
@@ -10,7 +30,7 @@
 .title {
   text-align: center;
   font-size: 70px;
-  margin: 50px 0 20px;
+  margin: 20px 0 20px;
 }
 
 .validation {
@@ -167,6 +187,11 @@ select {
 }
 
 @media screen and (max-width: 768px) {
+
+  .btnClose {
+    margin: 30px 0 0 0;
+  }
+
   .card {
     width: 96%;
     margin: 0 10px;
