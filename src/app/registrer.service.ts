@@ -12,4 +12,8 @@ export class RegistrerService {
     return this.http.post('https://localhost:7253/api/usuarios/',user);
     
   }
+
+  loginUser(): Observable<any>{
+    return this.http.get('https://localhost:7253/api/usuarios/')
+  }
 }
