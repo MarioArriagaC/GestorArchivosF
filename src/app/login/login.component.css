@@ -34,20 +34,21 @@ label {
   border-radius: 18px;
   border: none;
   text-align: center;
-  width: 50%;
+  width: 60%;
 }
 
 .btn {
   border-radius: 18px;
   border: none;
   text-align: center;
-  width: auto;
+  width: 20%;
   cursor: pointer;
   margin: 7px 0;
+  background: cyan;
 }
 
 .btn:hover {
-  box-shadow: 0 0 10px 3px rgb(222, 222, 222);
+  box-shadow: 0 0 10px 3px rgb(34, 233, 255);;
 }
 
 @media screen and (max-width: 760px) {
