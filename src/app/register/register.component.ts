@@ -29,18 +29,21 @@ export class RegisterComponent {
           this.registrado = true
         }
       }
-      if (this.registrado == false) {
-        this.RegisterService.registerUser({
-          Name: this.name,
-          Second_Name: this.lastName,
-          date_birth: this.dateBirth,
-          User: this.user,
-          Password: CryptoJS.SHA256(this.password).toString()
-        }).subscribe(data => {
-          alert('usuario creado con exito');
-          this.router.navigate(['/login']);
-        });
+      if (this.name === '' || this.lastName === '' || this.dateBirth === '' || this.user === '' || this.password === '') {
+        alert("Llena todo, pndejo idiota, baboso, mal parido, hijo de prra, culo si abres las dev tools");
       }
+      else if (this.registrado == false) {
+          this.RegisterService.registerUser({
+            Name: this.name,
+            Second_Name: this.lastName,
+            date_birth: this.dateBirth,
+            User: this.user,
+            Password: CryptoJS.SHA256(this.password).toString()
+          }).subscribe(data => {
+            alert('usuario creado con exito');
+            this.router.navigate(['/login']);
+          });
+        }
     });
   }
 
