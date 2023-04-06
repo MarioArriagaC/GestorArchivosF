@@ -54,12 +54,14 @@ export class RegisterComponent implements OnInit {
     this.day = this.today.getDate();
     
     // Concatenamos los valores del valor maximo de fecha
-    this.maxValueDate = this.year + '-0' + this.month + '-0' + this.day;
+    // Debe ser mayor de edad para poder registrarse
+    this.maxValueDate = this.year - 18 + '-0' + this.month + '-0' + this.day;
     
     // Agregamos ese atributo al elemento iptDate 
     this.iptDate.setAttribute("max", this.maxValueDate)
     
     // Concatenamos los valores del valor minimo de fecha
+    // 120 años menos de la fecha actual
     this.minValueDate = this.year - 120 + '-0' + this.month + '-0' + this.day;
     
     // Agregamos ese atributo al elemento iptDate 
