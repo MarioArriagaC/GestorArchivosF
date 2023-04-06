@@ -78,7 +78,7 @@ export class RegisterComponent implements OnInit {
         }
       }
       // En caso de que los campos no se cumplan de la manera correcta, sucederá este caso
-      if (this.name === '' || this.lastName === '' || this.dateBirth === '' || this.user === '' || this.password.length < 3) {
+      if (this.name === '' || this.lastName === '' || this.dateBirth > this.maxValueDate || this.user === '' || this.password.length < 3) {
         alert("Favor de llenar todos los requisitos de manera correcta");
       }
       else if (this.registrado == false) {
