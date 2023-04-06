@@ -84,7 +84,7 @@
     </div>
 
     <!-- Botón -->
-    <div *ngIf="name === '' || lastName === '' || password.length < 3 || dateBirth != maxValueDate else success">
+    <div *ngIf="name === '' || lastName === '' || password.length < 3 || dateBirth > maxValueDate else success">
       <button class="btnNotOk" disabled>Crear usuario</button>
       <button class="btnCancel" type="button" routerLink="/login">
         Cancelar
