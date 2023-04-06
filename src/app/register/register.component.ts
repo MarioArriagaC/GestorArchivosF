@@ -55,7 +55,7 @@ export class RegisterComponent implements OnInit {
   }
 
   disable() {
-    alert("Suelta ahí pndejo")
+    alert("No se le permite modificar este campo")
     this.router.navigate(['/register'])
     this.txtIpt.setAttribute("disabled", "")
   }
