@@ -17,6 +17,7 @@
             type="text"
             maxlength="15"
             placeholder="Nombre"
+            (keydown.space)="$event.preventDefault()"
           />
           <label for="lastName">Apellido:</label>
           <input
@@ -28,6 +29,7 @@
             type="text"
             maxlength="15"
             placeholder="Apellido"
+            (keydown.space)="$event.preventDefault()"
           />
           <label for="dateBirth">Fecha de nacimiento:</label>
           <input
@@ -55,6 +57,7 @@
             type="text"
             maxlength="15"
             placeholder="Usuario"
+            (keydown.space)="$event.preventDefault()"
           />
           <label for="password">Contraseña:</label>
           <input
@@ -66,6 +69,7 @@
             maxlength="15"
             minlength="5"
             placeholder="Contraseña"
+            (keydown.space)="$event.preventDefault()"
           />
           <div *ngIf="password.length < 3; else passwordOk">
             <p class="passwordTxtNotOk">La contraseña debe ser mayor a 3 carácteres 🚫</p>
