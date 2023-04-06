@@ -44,8 +44,8 @@ export class RegisterComponent implements OnInit{
           this.registrado = true
         }
       }
-      if (this.name === '' || this.lastName === '' || this.dateBirth === '' || this.user === '' || this.password === '') {
-        alert("Llena todo, pndejo idiota, baboso, mal parido, hijo de prra, culo si abres las dev tools");
+      if (this.name === '' || this.lastName === '' || this.dateBirth === '' || this.user === '' || this.password.length < 3) {
+        alert("Favor de llenar todos los requisitos de manera correcta");
       }
       else if (this.registrado == false) {
         this.RegisterService.registerUser({
