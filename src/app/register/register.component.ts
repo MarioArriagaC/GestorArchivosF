@@ -32,6 +32,22 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
     this.txtIpt = this.ipt.nativeElement.querySelector('.iptUsr');
     this.iptDate = this.iptD.nativeElement.querySelector('.iptDate')
+
+    // Obtenemos la fecha
+    this.today = new Date();
+
+    // De la fecha obtenemos el año, mes y día
+    this.year = this.today.getFullYear();
+    this.month = this.today.getMonth();
+    this.day = this.today.getDate();
+
+    // Concatenamos los valores del valor maximo de fecha
+    // Debe ser mayor de edad para poder registrarse
+    this.maxValueDate = this.year - 18 + '-0' + this.month + '-0' + this.day;
+
+    // Concatenamos los valores del valor minimo de fecha
+    // 120 años menos de la fecha actual
+    this.minValueDate = this.year - 120 + '-0' + this.month + '-0' + this.day;
   }
 
   userName() {
@@ -45,25 +61,9 @@ export class RegisterComponent implements OnInit {
   }
 
   date() {
-    // Obtenemos la fecha
-    this.today = new Date();
-
-    // De la fecha obtenemos el año, mes y día
-    this.year = this.today.getFullYear();
-    this.month = this.today.getMonth();
-    this.day = this.today.getDate();
-    
-    // Concatenamos los valores del valor maximo de fecha
-    // Debe ser mayor de edad para poder registrarse
-    this.maxValueDate = this.year - 18 + '-0' + this.month + '-0' + this.day;
-    
     // Agregamos ese atributo al elemento iptDate 
     this.iptDate.setAttribute("max", this.maxValueDate)
-    
-    // Concatenamos los valores del valor minimo de fecha
-    // 120 años menos de la fecha actual
-    this.minValueDate = this.year - 120 + '-0' + this.month + '-0' + this.day;
-    
+
     // Agregamos ese atributo al elemento iptDate 
     this.iptDate.setAttribute("min", this.minValueDate)
   }
