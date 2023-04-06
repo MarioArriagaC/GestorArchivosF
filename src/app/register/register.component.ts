@@ -87,7 +87,7 @@ export class RegisterComponent implements OnInit {
           User: this.user,
           Password: CryptoJS.SHA256(this.password).toString()
         }).subscribe(data => {
-          alert('usuario creado con exito');
+          alert('El Usuario ha sido creado con éxito');
           this.router.navigate(['/login']);
         });
       }
