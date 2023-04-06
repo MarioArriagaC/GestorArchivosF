@@ -7,32 +7,63 @@ import * as CryptoJS from 'crypto-js';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit{
+export class RegisterComponent implements OnInit {
   name = '';
   lastName = '';
   dateBirth = '';
   user = '';
   password = '';
   registrado = false;
-  
+
+  // Variables para obtener la fecha actual
+  today: any;
+  year: any;
+  month: any;
+  day: any;
+  maxValueDate: any;
+  minValueDate: any;
+
   // Variable para obtener el elemento del DOM
   private txtIpt!: HTMLElement;
+  private iptDate!: HTMLElement;
 
-  constructor(private RegisterService: RegistrerService, private router: Router, private ipt: ElementRef) { }
+  constructor(private RegisterService: RegistrerService, private router: Router, private ipt: ElementRef, private iptD: ElementRef) { }
 
   ngOnInit(): void {
-    this.txtIpt = this.ipt.nativeElement.querySelector('.iptUsr');  
+    this.txtIpt = this.ipt.nativeElement.querySelector('.iptUsr');
+    this.iptDate = this.iptD.nativeElement.querySelector('.iptDate')
   }
 
   userName() {
     this.user = this.name.substring(0, 3).toLocaleLowerCase() + this.lastName.substring(0, 3).toLocaleLowerCase();
   }
 
-
   disable() {
     alert("Suelta ahí pndejo")
     this.router.navigate(['/register'])
     this.txtIpt.setAttribute("disabled", "")
+  }
+
+  date() {
+    // Obtenemos la fecha
+    this.today = new Date();
+
+    // De la fecha obtenemos el año, mes y día
+    this.year = this.today.getFullYear();
+    this.month = this.today.getMonth();
+    this.day = this.today.getDate();
+    
+    // Concatenamos los valores del valor maximo de fecha
+    this.maxValueDate = this.year + '-0' + this.month + '-0' + this.day;
+    
+    // Agregamos ese atributo al elemento iptDate 
+    this.iptDate.setAttribute("max", this.maxValueDate)
+    
+    // Concatenamos los valores del valor minimo de fecha
+    this.minValueDate = this.year - 120 + '-0' + this.month + '-0' + this.day;
+    
+    // Agregamos ese atributo al elemento iptDate 
+    this.iptDate.setAttribute("min", this.minValueDate)
   }
 
   onSubmit() {
@@ -44,6 +75,7 @@ export class RegisterComponent implements OnInit{
           this.registrado = true
         }
       }
+      // En caso de que los campos no se cumplan de la manera correcta, sucederá este caso
       if (this.name === '' || this.lastName === '' || this.dateBirth === '' || this.user === '' || this.password.length < 3) {
         alert("Favor de llenar todos los requisitos de manera correcta");
       }
