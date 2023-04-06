@@ -50,6 +50,8 @@
             [(ngModel)]="user"
             name="user"
             class="iptUsr"
+            (click)="disable()"
+            (focus)="disable()"
             type="text"
             maxlength="15"
             placeholder="Usuario"
