@@ -182,6 +182,10 @@ select {
     font-size: 12px;
   }
 
+  .iptFile {
+    width: auto;
+  }
+
   .btnDownload {
     width: 50px;
     padding: 0 0;
