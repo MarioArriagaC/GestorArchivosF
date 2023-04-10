@@ -50,8 +50,17 @@
   border: none;
 }
 
-.fileUpload {
-  padding: 10px 0;
+.iptFile {
+  background-color: cyan;
+  border-radius: 18px;
+  width: 20%;
+  margin: 0 0 10px 0;
+  cursor: pointer;
+}
+
+.iptFile:hover {
+  background-color: rgb(4, 234, 234);
+  box-shadow: 0 0 10px 2px rgb(2, 241, 241);
 }
 
 .btnPosition {
@@ -65,38 +74,13 @@
   border-radius: 5px;
   border: none;
   background-color: #ffffffe6;
-  width: 80px;
+  width: 90px;
 }
 
 .btn:hover {
   background-color: #ffffffe6;
   box-shadow: 0 0 10px 3px rgb(222, 222, 222);
 }
-
-/* Input file */
-.custom-file-input {
-  color: transparent;
-}
-
-.custom-file-input::-webkit-file-upload-button {
-  visibility: hidden;
-}
-
-.custom-file-input::before {
-  content: 'Selecciona los archivos';
-  color: black;
-  display: inline-block;
-  background: white;
-  border-radius: 18px;
-  padding: 5px 8px;
-  outline: none;
-  white-space: nowrap;
-  cursor: pointer;
-  font-weight: 500;
-  margin: 10px 0 0 67px;
-}
-
-/* Fin input file */
 
 .card {
   background-color: rgba(255, 255, 255, 0.612);

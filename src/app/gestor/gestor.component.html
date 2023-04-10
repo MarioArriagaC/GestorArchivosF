@@ -12,9 +12,8 @@
   <!-- Formulario -->
   <div class="validation">
     <!-- Archivo seleccionado -->
-    <input type="file" class="custom-file-input" #file (change)="upload($event)" style="border-radius: 90px;" />
-    <input type="file" (change)="onFileSelected($event)">
-    <button (click)="onUpload()">Subir Archivo</button>
+    <input type="file" class="iptFile" #file (change)="upload($event)" />
+    <button class="btn" (click)="onUpload()">Subir Archivo</button>
   </div>  
   
   <div class="btnPosition">
