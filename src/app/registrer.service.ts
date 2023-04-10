@@ -6,7 +6,6 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class RegistrerService {
-
   constructor(private http: HttpClient) { }
   registerUser(user: any): Observable<any>{
     return this.http.post('https://localhost:7253/api/usuarios/',user);

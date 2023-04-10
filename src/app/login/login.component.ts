@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { RegistrerService } from '../registrer.service';
 import { Router } from '@angular/router';
 import * as CryptoJS from 'crypto-js';
@@ -18,6 +18,7 @@ export class LoginComponent {
       for(let numero in data){
         if(this.name == data[numero].user && CryptoJS.SHA256(this.password).toString() == data[numero].password){
           this.router.navigate(['/gestor']);
+          
         }
       }
     });

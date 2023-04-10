@@ -7,7 +7,7 @@ import { formatDate } from '@angular/common';
   styleUrls: ['./gestor.component.css']
 })
 export class GestorComponent {
-  
+  file?:File;
   files: any;
   selectedFile: any;
   constructor(private ArchivoService: ArchivosService){}
@@ -19,25 +19,19 @@ export class GestorComponent {
       
     });
 
-    
-
-    this.ArchivoService.editFile({
-      id: 2,
-      name: "morpheus.pnga",
-      ruta_archivo: "./assets/files/",
-      status: true
-    }).subscribe(data => {
-      //console.log(data)
-    });
   }
 
  
 
   upload(name: any){
-    const file:File = name.target.files[0];
-    console.log(file)
+    this.file = name.target.files[0];
+    console.log(this.file)
+    
+  }
+
+  subir(){
     this.ArchivoService.uploadFile({
-      name: file.name,
+      name: this.file?.name,
       ruta_archivo: "./assets/files/",
       status: true
     }).subscribe(data => {
@@ -48,26 +42,7 @@ export class GestorComponent {
       });
     });
   }
-  onFileSelected(event: any){
-    this.selectedFile = <File>event.target.files[0];
-    console.log(this.selectedFile)
-  }
-
-  onUpload(){
-    const fd = new FormData();
-    fd.append('image',this.selectedFile, this.selectedFile.name);
-    console.log(fd)
-    this.ArchivoService.uploadFile({
-      fd
-    }).subscribe(data => {
-      this.ArchivoService.getFiles().subscribe(data => {
-        this.files = data;
-        console.log(data);
-        
-      });
-    });
-  }
-
+  
   
 
 }

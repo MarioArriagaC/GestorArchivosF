@@ -1,7 +1,7 @@
 <div>
   <!-- Botón para cerrar sesión -->
   <div class="logout">
-    <button class="btnClose" type="button">Cerrar sesión</button>
+    <button class="btnClose" type="button" routerLink="/login">Cerrar sesión</button>
   </div>
 
   <!-- Titulo -->
@@ -12,12 +12,12 @@
   <!-- Formulario -->
   <div class="validation">
     <!-- Archivo seleccionado -->
-    <input type="file" class="iptFile" #file (change)="upload($event)" />
-    <button class="btn" (click)="onUpload()">Subir Archivo</button>
+    <input type="file"  class="custom-file-input" #file (change)="upload($event)" style="border-radius: 90px;"/>
+
   </div>  
   
   <div class="btnPosition">
-    <button type="button" class="btn">Aceptar</button>
+    <button type="button" class="btn" (click)="subir()">Aceptar</button>
   </div>
 
   <!-- Card con datos  -->
